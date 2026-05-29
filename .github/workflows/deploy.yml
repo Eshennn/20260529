@@ -1,0 +1,22 @@
+name: Deploy Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        run: echo "Setting up environment..."
+        # 這裡可以加入你需要的環境設定，例如 actions/setup-node 或是 setup-python
+
+      - name: Deploy application
+        run: echo "Deploying files..."
+        # 這裡請替換成你實際的部署指令，例如 npm run build && scp ... 或是呼叫雲端服務的 CLI
